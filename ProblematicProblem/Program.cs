@@ -68,8 +68,13 @@ namespace ProblematicProblem
                         }
                         Console.WriteLine();
                         Console.WriteLine("Would you like to add more? yes/no: ");
-                        addToList = bool.Parse(Console.ReadLine());
-                    }
+                        //addToList = bool.Parse(Console.ReadLine());
+                    var inputForAdd2 = Console.ReadLine().ToLower();
+                    if (inputForAdd2 == "yes")
+                    { addToList = true; }
+                    else
+                    { addToList = false; }
+                }
                 }
 
                 while (cont)
@@ -98,9 +103,14 @@ namespace ProblematicProblem
                         randomNumber = rng.Next(activities.Count);
                         randomActivity = $"activities[randomNumber]";
                     }
-                Console.Write($"Ah got it! {randomActivity}, your random activity is: {userName}! Is this ok or do you want to grab another activity? Keep/Redo: ");
+                Console.Write($"Ah got it! {randomActivity}, your random activity is: {userName}! Is this ok or do you want to grab another activity? yes/no: ");
                             Console.WriteLine();
-                     cont = bool.Parse(Console.ReadLine());
+                     //cont = bool.Parse(Console.ReadLine());
+                var inputForAdd3 = Console.ReadLine().ToLower();
+                if (inputForAdd3 == "yes")
+                { cont = true; }
+                else
+                { cont = false; }
             }
         }
     }
